@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>canvas練習222</title>
+</head>
+<script>
+
+var cvs,ctx
+    window.onload=function(){
+        cvs = document.getElementById("cvs")
+        ctx = cvs.getContext("2d")
+       /* var img = new Image()
+        img.src = "mypic.jpg"
+        img.onload = function(){
+            ctx.drawImage(this,0,0,cvs.width,cvs.height)
+        } */
+
+}
+function change(){
+    var pic = ctx.getImageData(0,0,cvs.width,cvs.height)
+    var data = pic.data
+    for(var i = 0; i < data.length; i+=4){
+       data[i]=255-data[i]
+       data[i+1]=255-data[i+1]
+       data[i+2]=255-data[i+2]
+    }
+    ctx.putImageData(pic,0,0)
+}
+
+function lofile(input) {
+    var file=input.files[0]
+    var src=URL.createObjectURL(file)
+    var img=new Image()
+        img.src=src
+        img.onload=function(){
+            ctx.drawImage(this,0,0,cvs.width,cvs.height)
+        }
+
+}
+function savef(){
+    var link = document.getElementById("download")
+        link.download="fuck.jpg"
+        link.href=cvs.toDataURL("image/jpeg")
+        link.click()
+}
+
+</script>
+
+<body>
+        <input type="file" onchange="lofile(this)">
+        <button onclick="savef()">儲存檔案</button>
+        <a id="download"></a>
+        <button onclick="change()">Change color</button>
+        <div><canvas id="cvs" width="800" height="800" style="border: 5px solid #000000"> </canvas></div>
+</body>
+</html>
