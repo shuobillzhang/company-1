@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*func test(x int) {
 	var n int
 	var result int = 0
@@ -10,12 +8,16 @@ import "fmt"
 	}
 	fmt.Println(result)
 }*/
-func add(n1 int, n2 int) {
+func add(n1 int, n2 int) int {
 	var result int = n1 + n2
-	fmt.Println(result)
+	return result
+
+}
+func test() (int, string) {
+	return 5, "10"
 }
 func main() {
-
-	add(3, 5)
-
+	/*var x int = add(5, 3)
+	fmt.Println(x * 10)*/
+	test()
 }
