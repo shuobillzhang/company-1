@@ -16,10 +16,10 @@ import "fmt"
 
 }
 */
-type Point struct {
+/*type Point struct {
 	name string
 	age  int
-}
+}*/
 
 func main() {
 	/*	var x int = 10
@@ -31,8 +31,19 @@ func main() {
 		fmt.Scanln(&msg)
 		fmt.Println(msg)
 	*/
-	var p1 Point = Point{"BILL", 50}
+	/*var p1 Point = Point{"BILL", 50}
 	var p2 Point = Point{age: 25, name: "Brain"}
-	fmt.Println(p1.name, p2.name)
+	fmt.Println(p1.name, p2.name)*/
+
+	var arr [5]int
+	var index int
+	for index = 0; index < len(arr); index++ {
+		fmt.Scanln(&arr[index])
+	}
+	var sum int = 0
+	for index = 0; index < len(arr); index++ {
+		sum += arr[index]
+	}
+	fmt.Println("總合為:", sum)
 
 }
