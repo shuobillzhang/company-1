@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*func test(x int) {
 	var n int
 	var result int = 0
@@ -20,7 +18,10 @@ import "fmt"
 	name string
 	age  int
 }*/
-
+func add(yster *int) {
+	*yster = *yster + 3
+	//	println(*yster)
+}
 func main() {
 	/*	var x int = 10
 
@@ -35,15 +36,20 @@ func main() {
 	var p2 Point = Point{age: 25, name: "Brain"}
 	fmt.Println(p1.name, p2.name)*/
 
-	var arr [5]int
-	var index int
-	for index = 0; index < len(arr); index++ {
-		fmt.Scanln(&arr[index])
-	}
-	var sum int = 0
-	for index = 0; index < len(arr); index++ {
-		sum += arr[index]
-	}
-	fmt.Println("總合為:", sum)
+	/*	var arr [5]int
+		var index int
+		for index = 0; index < len(arr); index++ {
+			fmt.Scanln(&arr[index])
+		}
+		var sum int = 0
+		for index = 0; index < len(arr); index++ {
+			sum += arr[index]
+		}
+		fmt.Println("總合為:", sum)*/
+
+	var y int = 3
+
+	add(&y)
+	println(y)
 
 }
