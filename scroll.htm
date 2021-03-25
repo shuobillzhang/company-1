@@ -14,15 +14,23 @@
 <title>控制卷軸</title>
 </head>
 <script>
+    var box;
     window.onload=function(){
+        box=document.getElementById("box");
+        window.setInterval(scroll,50);
+
 
     };
+    function scroll() {
+        box.scrollTop++;
+    }
 
 
 </script>
 <style type="text/css">
 .box{
-    border: 1px solid #000000;width:200px;
+    border: 1px solid #000000;width:200px;height:80px;
+    overflow:hidden ;
 }
 </style>
 
@@ -33,6 +41,9 @@
         <div>this is line3</div>
         <div>this is line4</div>
         <div>this is line5</div>
+        <div>this is line6</div>
+        <div>this is line7</div>
+        <div>this is line8</div>
     </div>
         
 </body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZNMWNB50B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PZNMWNB50B');
+
+</script>
+<title>表單設計</title>
+</head>
+
+<style type="text/css">
+form{
+    line-height: 2;
+}
+form>input, form>select{
+    padding: 5px 10px; border: 1px solid #888888 ;border-radius: 5px;
+}
+form>.ok{
+    color:green;
+}
+form>input:valid+.ok{
+    display: inline;
+}
+form>input:invalid+.ok{
+    display: none;
+}
+
+</style>
+
+<body>
+    <h1>註冊帳號</h1>
+    <form onsubmit="alert('表單送出')">
+    帳號:<input type="text" required placeholder="4-12英數字" pattern="[0-9a-zA-Z]{4,12}"/>
+    <span class="ok">ok</span><br/>
+    密碼:<input type="password" required placeholder="8-16英數字"/>
+    <span class="ok">ok</span><br/>
+    電郵:<input type="email" required/>
+    <span class="ok">ok</span><br/>
+    電話:<input type="text"/><br/>
+    性別:
+      男:<input type="radio" name="gender" value="male" required/>
+      女:<input type="radio" name="gender" value="female" required/>
+      三性:<input type="radio" name="gender" value="people" required/><br/>
+    生日:<select required>
+         <option value="">出生年</option>
+         <option value="1999">1999</option>
+         <option value="1998">1998</option>
+    </select><br/><br/>
+    <input type="submit" value="送資料"/>
+    </form>
+        
+</body>
+</html>
